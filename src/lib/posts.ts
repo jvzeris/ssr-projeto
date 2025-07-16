@@ -48,14 +48,14 @@ O parâmetro \`{ cache: 'no-store' }\` garante que a requisição seja feita a c
 - Menor tempo para o usuário ver a página
 
 ---
-
-Gostou? No próximo post, falaremos sobre como usar o GitHub no seu projeto!
 `
     },
     {
         slug: 'github-dicas',
         title: 'Dicas para usar o GitHub no seu projeto',
         content: `
+# Dicas para usar o GitHub no seu projeto
+
 O GitHub é uma plataforma essencial para controlar versões e colaborar em projetos de software. Aqui vão algumas dicas para melhorar seu uso:
 
 - **Faça commits pequenos e claros:** facilite a revisão e o entendimento do histórico.
@@ -65,6 +65,8 @@ O GitHub é uma plataforma essencial para controlar versões e colaborar em proj
 - **GitHub Actions:** automatize testes, builds e deploys para ganhar eficiência.
 
 Seguindo essas práticas, seu fluxo de trabalho será mais produtivo e profissional!
+
+---
 `
     }
 ]
