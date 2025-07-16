@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { posts } from '../lib/posts'
 import { getNews, type NewsItem } from '../lib/news'
 
+//Esta função roda no servidor a cada requisição (SSR real)
 export default async function Home() {
   const news: NewsItem[] = await getNews()
 

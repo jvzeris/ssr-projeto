@@ -1,14 +1,14 @@
 export type Post = {
-    slug: string
-    title: string
-    content: string
+  slug: string
+  title: string
+  content: string
 }
 
 export const posts: Post[] = [
-    {
-        slug: 'nextjs-ssr',
-        title: 'Como funciona o SSR no Next.js',
-        content: `
+  {
+    slug: 'nextjs-ssr',
+    title: 'Como funciona o SSR no Next.js',
+    content: `
 # Como funciona o SSR no Next.js
 
 Neste post, vamos entender como funciona o **Server-Side Rendering (SSR)** no Next.js.
@@ -26,34 +26,35 @@ SSR é uma técnica onde a página é renderizada no servidor a cada requisiçã
 No Next.js, você pode criar componentes assíncronos que fazem requisições e renderizam no servidor. Exemplo:
 
 \`\`\`tsx
-export default async function Page() {
-  const res = await fetch('https://api.exemplo.com/dados', { cache: 'no-store' })
-  const data = await res.json()
+// Esta função roda no servidor a cada requisição (SSR real)
+
+export default async function Home() {
+  const news: NewsItem[] = await getNews()
 
   return (
     <div>
-      <h1>{data.titulo}</h1>
-      <p>{data.descricao}</p>
+      {/* Renderize seu conteúdo aqui */}
     </div>
   )
 }
 \`\`\`
+---
 
-O parâmetro \`{ cache: 'no-store' }\` garante que a requisição seja feita a cada acesso, ou seja, SSR real.
+Neste exemplo, a função **Home** é executada no servidor a cada requisição, garantindo que a página seja gerada dinamicamente para cada acesso — caracterizando um **SSR verdadeiro**.
 
 ## Vantagens do SSR
 
-- Conteúdo sempre atualizado
-- Melhor indexação no Google
+- Conteúdo sempre atualizado  
+- Melhor indexação no Google (SEO)  
 - Menor tempo para o usuário ver a página
 
 ---
 `
-    },
-    {
-        slug: 'github-dicas',
-        title: 'Dicas para usar o GitHub no seu projeto',
-        content: `
+  },
+  {
+    slug: 'github-dicas',
+    title: 'Dicas para usar o GitHub no seu projeto',
+    content: `
 # Dicas para usar o GitHub no seu projeto
 
 O GitHub é uma plataforma essencial para controlar versões e colaborar em projetos de software. Aqui vão algumas dicas para melhorar seu uso:
@@ -68,5 +69,5 @@ Seguindo essas práticas, seu fluxo de trabalho será mais produtivo e profissio
 
 ---
 `
-    }
+  }
 ]
