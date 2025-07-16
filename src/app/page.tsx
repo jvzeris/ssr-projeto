@@ -6,15 +6,27 @@ export default async function Home() {
   const news: NewsItem[] = await getNews()
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Blog de Tecnologia</h1>
+    <main className="max-w-3xl mx-auto px-6 py-10 bg-white min-h-screen">
+      <h1 className="text-4xl font-extrabold mb-8 text-blue-600" style={{ color: '#7A9CC6' }}>
+        Blog de Tecnologia
+      </h1>
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Posts do Blog</h2>
-        <ul className="space-y-2">
+      {/* Posts do Blog */}
+      <section className="mb-12">
+        <h2
+          className="text-3xl font-semibold mb-5 border-b-2 pb-2"
+          style={{ borderColor: '#A3BED8', color: '#5C7CBA' }}
+        >
+          Posts do Blog
+        </h2>
+        <ul className="space-y-4">
           {posts.map((post) => (
             <li key={post.slug}>
-              <Link href={`/post/${post.slug}`} className="text-blue-600 hover:underline">
+              <Link
+                href={`/post/${post.slug}`}
+                className="text-xl font-medium hover:underline"
+                style={{ color: '#6388B8' }}
+              >
                 {post.title}
               </Link>
             </li>
@@ -22,15 +34,31 @@ export default async function Home() {
         </ul>
       </section>
 
+      {/* Notícias de Tecnologia */}
       <section>
-        <h2 className="text-2xl font-semibold mb-4">Notícias de Tecnologia</h2>
-        <ul className="space-y-4">
+        <h2
+          className="text-3xl font-semibold mb-6 border-b-2 pb-2"
+          style={{ borderColor: '#A3BED8', color: '#5C7CBA' }}
+        >
+          Notícias de Tecnologia
+        </h2>
+        <ul className="space-y-6">
           {news.map((item, idx) => (
-            <li key={idx}>
-              <a href={item.url} target="_blank" className="text-lg font-medium text-blue-700 hover:underline">
+            <li
+              key={idx}
+              className="p-5 rounded-md"
+              style={{ backgroundColor: '#E8F0FE' }}
+            >
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-semibold hover:underline"
+                style={{ color: '#466DAB' }}
+              >
                 {item.title}
               </a>
-              <p className="text-gray-700">{item.description}</p>
+              <p className="mt-2 text-gray-700">{item.description}</p>
             </li>
           ))}
         </ul>
