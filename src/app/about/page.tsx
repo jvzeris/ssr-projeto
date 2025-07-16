@@ -1,16 +1,10 @@
 import Link from 'next/link'
 
-export default function About() {
+export default function AboutPage() {
     return (
-        <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
-            {/* Bolhas visuais no fundo */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none z-0">
-                <div className="absolute w-[400px] h-[400px] bg-blue-300 rounded-full -top-20 -left-20 blur-[120px]" />
-                <div className="absolute w-[350px] h-[350px] bg-purple-300 rounded-full -bottom-20 -right-10 blur-[100px]" />
-            </div>
-
+        <div className="min-h-screen flex flex-col bg-gradient-to-b from-purple-100 to-blue-100 relative overflow-hidden">
             {/* Navbar */}
-            <nav className="bg-gradient-to-r from-purple-300 to-blue-300 shadow-md relative z-10">
+            <nav className="bg-gradient-to-r from-purple-300 to-sky-300 shadow-md relative z-10">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                     <h1 className="text-xl font-semibold text-gray-800">SSR-Projeto</h1>
                     <ul className="flex space-x-6 text-gray-800 font-semibold">
@@ -21,36 +15,46 @@ export default function About() {
                 </div>
             </nav>
 
-            <main className="flex-grow max-w-3xl mx-auto px-6 py-10 sm:px-4 relative z-10">
-                <h2 className="text-4xl font-extrabold mb-8 text-gray-900">Sobre o Projeto</h2>
+            {/* Conteúdo */}
+            <main className="flex-grow max-w-4xl mx-auto px-6 py-12 sm:px-4 space-y-10 relative z-10">
+                <h2 className="text-4xl font-extrabold text-gray-900 border-b-4 border-purple-300 pb-2">Sobre o Projeto</h2>
 
-                <p className="mb-6 text-gray-700 leading-relaxed">
-                    Este projeto foi desenvolvido por <strong>João Oliveira</strong> e <strong>Raquel Marafon</strong>, como parte de um blog de tecnologia com SSR usando Next.js.
+                <p className="text-gray-800 text-lg leading-relaxed">
+                    Este é um projeto de blog com Server-Side Rendering (SSR) desenvolvido em Next.js. Ele busca integrar posts manuais e notícias automáticas de tecnologia, com foco em performance, organização e aprendizado prático.
                 </p>
 
-                <h3 className="text-2xl font-semibold mb-4 text-gray-800 border-b border-blue-300 pb-2">
-                    Contatos
-                </h3>
+                <h3 className="text-2xl font-bold text-gray-900 border-b-4 border-blue-300 pb-2">Desenvolvedores</h3>
 
-                <div className="mb-6">
-                    <h4 className="text-xl font-semibold text-gray-900">João Oliveira</h4>
-                    <ul className="text-gray-700">
-                        <li>Email: <a href="mailto:jvzeris@gmail.com" className="text-blue-600 hover:underline">jvzeris@gmail.com</a></li>
-                        <li>GitHub: <a href="https://github.com/jvzeris" className="text-blue-600 hover:underline" target="_blank">github.com/jvzeris</a></li>
-                        <li>Lattes: <a href="http://lattes.cnpq.br/7484388137749793" className="text-blue-600 hover:underline" target="_blank">lattes.cnpq.br/7484388137749793</a></li>
-                    </ul>
-                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    {/* João */}
+                    <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md">
+                        <img
+                            src="https://avatars.githubusercontent.com/u/129817464?v=4"
+                            alt="João Oliveira"
+                            className="w-32 h-32 rounded-full border-4 border-blue-300 mb-4"
+                        />
+                        <h4 className="text-xl font-semibold text-gray-800">João Oliveira</h4>
+                        <p className="text-sm text-gray-700">Email: <a href="mailto:jvzeris@gmail.com" className="text-blue-600 hover:underline">jvzeris@gmail.com</a></p>
+                        <p className="text-sm text-gray-700">GitHub: <a href="https://github.com/jvzeris" target="_blank" className="text-blue-600 hover:underline">github.com/jvzeris</a></p>
+                        <p className="text-sm text-gray-700">Lattes: <a href="http://lattes.cnpq.br/7484388137749793" target="_blank" className="text-blue-600 hover:underline">Ver currículo</a></p>
+                    </div>
 
-                <div>
-                    <h4 className="text-xl font-semibold text-gray-900">Raquel Marafon</h4>
-                    <ul className="text-gray-700">
-                        <li>Email: <a href="mailto:raquelbmarafon@gmail.com" className="text-blue-600 hover:underline">raquelbmarafon@gmail.com</a></li>
-                        <li>GitHub: <a href="https://github.com/raquelmarafon" className="text-blue-600 hover:underline" target="_blank">github.com/raquelmarafon</a></li>
-                        <li>Lattes: <a href="https://lattes.cnpq.br/1465022168062768" className="text-blue-600 hover:underline" target="_blank">lattes.cnpq.br/1465022168062768</a></li>
-                    </ul>
+                    {/* Raquel */}
+                    <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md">
+                        <img
+                            src="https://avatars.githubusercontent.com/u/138199551?v=4"
+                            alt="Raquel Marafon"
+                            className="w-32 h-32 rounded-full border-4 border-purple-300 mb-4"
+                        />
+                        <h4 className="text-xl font-semibold text-gray-800">Raquel Marafon</h4>
+                        <p className="text-sm text-gray-700">Email: <a href="mailto:raquelbmarafon@gmail.com" className="text-blue-600 hover:underline">raquelbmarafon@gmail.com</a></p>
+                        <p className="text-sm text-gray-700">GitHub: <a href="https://github.com/raquelmarafon" target="_blank" className="text-blue-600 hover:underline">github.com/raquelmarafon</a></p>
+                        <p className="text-sm text-gray-700">Lattes: <a href="https://lattes.cnpq.br/1465022168062768" target="_blank" className="text-blue-600 hover:underline">Ver currículo</a></p>
+                    </div>
                 </div>
             </main>
 
+            {/* Footer */}
             <footer className="bg-white border-t border-gray-300 py-6 text-center text-gray-600 text-sm shadow-inner relative z-10">
                 © 2025 SSR-Projeto. Todos os direitos reservados.
             </footer>
