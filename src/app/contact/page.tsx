@@ -1,57 +1,55 @@
 import Link from 'next/link'
 
-export default function Contact() {
+export default function ContactPage() {
     return (
-        <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
-            {/* Bolhas visuais no fundo */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none z-0">
-                {/* Bolha azul no topo esquerdo */}
-                <div className="absolute w-[400px] h-[400px] bg-blue-300 rounded-full -top-20 -left-20 blur-[120px]"></div>
-
-                {/* Bolha roxa no fundo direito */}
-                <div className="absolute w-[350px] h-[350px] bg-purple-300 rounded-full -bottom-20 -right-10 blur-[100px]"></div>
-            </div>
-
+        <div className="min-h-screen flex flex-col bg-gradient-to-b from-purple-100 to-blue-100 relative overflow-hidden">
             {/* Navbar */}
-            <nav className="bg-gradient-to-r from-purple-300 to-blue-300 shadow-md relative z-10">
+            <nav className="bg-gradient-to-r from-purple-300 to-sky-300 shadow-md relative z-10">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                     <h1 className="text-xl font-semibold text-gray-800">SSR-Projeto</h1>
                     <ul className="flex space-x-6 text-gray-800 font-semibold">
-                        <li>
-                            <Link href="/" className="hover:text-black transition-colors">Home</Link>
-                        </li>
-                        <li>
-                            <Link href="/about" className="hover:text-black transition-colors">Sobre</Link>
-                        </li>
-                        <li>
-                            <Link href="/contact" className="hover:text-black transition-colors">Contato</Link>
-                        </li>
+                        <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
+                        <li><Link href="/about" className="hover:text-black transition-colors">Sobre</Link></li>
+                        <li><Link href="/contact" className="hover:text-black transition-colors">Contato</Link></li>
                     </ul>
                 </div>
             </nav>
 
-            {/* Conteúdo principal */}
-            <main className="flex-grow max-w-3xl mx-auto px-6 py-10 sm:px-4 relative z-10">
-                <h2 className="text-4xl font-extrabold mb-8 text-gray-900">Contato</h2>
+            {/* Conteúdo */}
+            <main className="flex-grow max-w-4xl mx-auto px-6 py-12 sm:px-4 space-y-10 relative z-10">
+                <h2 className="text-4xl font-extrabold text-gray-900 border-b-4 border-blue-300 pb-2">Contato</h2>
 
-                <p className="mb-6 text-gray-700">
-                    Quer falar com a gente? Seguem os contatos abaixo:
-                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    {/* João */}
+                    <div className="flex items-center bg-white rounded-lg shadow-md p-6 space-x-4">
+                        <img
+                            src="https://avatars.githubusercontent.com/u/129817464?v=4"
+                            alt="João Oliveira"
+                            className="w-20 h-20 rounded-full border-2 border-blue-300"
+                        />
+                        <div>
+                            <h3 className="text-xl font-bold text-gray-800">João Oliveira</h3>
+                            <p className="text-sm text-gray-700">📧 jvzeris@gmail.com</p>
+                            <p className="text-sm text-gray-700">🔗 <a href="https://github.com/jvzeris" className="text-blue-600 hover:underline" target="_blank">GitHub</a></p>
+                            <p className="text-sm text-gray-700">📄 <a href="http://lattes.cnpq.br/7484388137749793" className="text-blue-600 hover:underline" target="_blank">Lattes</a></p>
+                        </div>
+                    </div>
 
-                <ul className="text-gray-700 space-y-4">
-                    <li>
-                        <strong>João Oliveira:</strong>{' '}
-                        <a href="mailto:jvzeris@gmail.com" className="text-blue-600 hover:underline">
-                            jvzeris@gmail.com
-                        </a>
-                    </li>
-                    <li>
-                        <strong>Raquel Marafon:</strong>{' '}
-                        <a href="mailto:raquelbmarafon@gmail.com" className="text-blue-600 hover:underline">
-                            raquelbmarafon@gmail.com
-                        </a>
-                    </li>
-                </ul>
+                    {/* Raquel */}
+                    <div className="flex items-center bg-white rounded-lg shadow-md p-6 space-x-4">
+                        <img
+                            src="https://avatars.githubusercontent.com/u/138199551?v=4"
+                            alt="Raquel Marafon"
+                            className="w-20 h-20 rounded-full border-2 border-purple-300"
+                        />
+                        <div>
+                            <h3 className="text-xl font-bold text-gray-800">Raquel Marafon</h3>
+                            <p className="text-sm text-gray-700">📧 raquelbmarafon@gmail.com</p>
+                            <p className="text-sm text-gray-700">🔗 <a href="https://github.com/raquelmarafon" className="text-blue-600 hover:underline" target="_blank">GitHub</a></p>
+                            <p className="text-sm text-gray-700">📄 <a href="https://lattes.cnpq.br/1465022168062768" className="text-blue-600 hover:underline" target="_blank">Lattes</a></p>
+                        </div>
+                    </div>
+                </div>
             </main>
 
             {/* Footer */}
